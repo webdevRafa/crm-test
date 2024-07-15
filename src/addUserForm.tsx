@@ -14,9 +14,11 @@ const AddUserForm: React.FC = () => {
   return (
     <>
       <div className="mx-auto w-[90%] max-w-[1200px] mt-20">
-        <h1 className="text-teal">Add a User</h1>
+        <h1 className="text-white mb-2">
+          This will add a user to Firestore DB Collection 'users'
+        </h1>
       </div>
-      <div className="bg-blue-med w-[90%] max-w-[1200px] py-12 mx-auto flex justify-center rounded-lg">
+      <div className="bg-blue-med w-[90%] max-w-[1200px] py-12 mx-auto flex justify-center rounded-lg shadow-lg">
         <form
           className="flex flex-col gap-2 md:flex-row"
           onSubmit={handleSubmit}
@@ -42,7 +44,7 @@ const AddUserForm: React.FC = () => {
             placeholder="Last Name"
             required
           />
-          <button className="bg-teal" type="submit">
+          <button className="bg-teal px-3 " type="submit">
             Add User
           </button>
         </form>

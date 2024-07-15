@@ -8,7 +8,10 @@ export default {
     colors: {
       'blue-light': '#255AAD',
       'blue-med': '#204F97',
-      'blue-dark': '#1C4482'
+      'blue-dark': '#1C4482',
+      'white': '#ffffff',
+      'orange': '#F36A11',
+      'teal': '#36FDEA'
     },
     extend: {},
   },

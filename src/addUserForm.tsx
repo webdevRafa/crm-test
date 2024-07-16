@@ -44,7 +44,10 @@ const AddUserForm: React.FC = () => {
             placeholder="Last Name"
             required
           />
-          <button className="bg-teal px-3 " type="submit">
+          <button
+            className="bg-teal px-3 hover:bg-teal-dark transition duration-150 ease-in-out"
+            type="submit"
+          >
             Add User
           </button>
         </form>

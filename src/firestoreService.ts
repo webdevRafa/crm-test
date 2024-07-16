@@ -1,4 +1,4 @@
-import { collection, onSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 
 interface User {
@@ -14,3 +14,8 @@ export const getUsersRealtime = (callback: (users: User[]) => void): (() => void
     });
     return unsubscribe;
   };
+
+export const deleteUser = async (email: string): Promise<void> => {
+    const userDoc = doc(db, 'users', email);
+    await deleteDoc(userDoc);
+};

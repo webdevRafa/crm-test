@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUsersRealtime } from "./firestoreService";
+import { getUsersRealtime, deleteUser } from "./firestoreService";
 
 interface User {
   email: string;
@@ -19,6 +19,14 @@ const UserList: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleDelete = async (email: string) => {
+    try {
+      await deleteUser(email);
+    } catch (error) {
+      console.error("Error deleting user: ", error);
+    }
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center mx-auto w-[90%] max-w-[1200px] mt-10">
@@ -27,10 +35,18 @@ const UserList: React.FC = () => {
             current users
           </h1>
         </div>
-        <div className="text-teal">
+        <div>
           {users.map((user) => (
             <div key={user.email}>
-              {user.firstName} {user.lastName} - {user.email}
+              <div className="flex items-center gap-1 mb-3 text-white">
+                <button
+                  className="bg-red px-1 transition duration-150 ease-in-out hover:bg-red-dark"
+                  onClick={() => handleDelete(user.email)}
+                >
+                  Delete
+                </button>
+                {user.firstName} {user.lastName} - {user.email}
+              </div>
             </div>
           ))}
         </div>

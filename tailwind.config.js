@@ -11,7 +11,10 @@ export default {
       'blue-dark': '#1C4482',
       'white': '#ffffff',
       'orange': '#F36A11',
-      'teal': '#36FDEA'
+      'teal': '#36C4FD',
+      'teal-dark': '#2993BE',
+      'red': '#D94545',
+      'red-dark': '#A33434'
     },
     extend: {},
   },

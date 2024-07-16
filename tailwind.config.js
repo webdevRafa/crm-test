@@ -14,7 +14,8 @@ export default {
       'teal': '#36C4FD',
       'teal-dark': '#2993BE',
       'red': '#D94545',
-      'red-dark': '#A33434'
+      'red-dark': '#A33434',
+      'green': '#60F070'
     },
     extend: {},
   },

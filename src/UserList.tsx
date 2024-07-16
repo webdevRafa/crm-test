@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getUsersRealtime, deleteUser } from "./firestoreService";
+
+import {
+  getUsersRealtime,
+  deleteUser,
+  moveUserToPremium,
+} from "./firestoreService";
 
 interface User {
   email: string;
@@ -44,6 +49,12 @@ const UserList: React.FC = () => {
                   onClick={() => handleDelete(user.email)}
                 >
                   Delete
+                </button>
+                <button
+                  className="bg-green text-blue-dark font-bold px-2"
+                  onClick={() => moveUserToPremium(user.email)}
+                >
+                  Premium
                 </button>
                 {user.firstName} {user.lastName} - {user.email}
               </div>

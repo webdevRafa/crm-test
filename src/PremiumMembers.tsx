@@ -46,7 +46,7 @@ const PremiumMembers: React.FC = () => {
               <div className="flex gap-2">
                 <button
                   className="bg-red px-2 hover:bg-red-dark transition duration-150 ease-in-out"
-                  onClick={() => handleMoveToRegular}
+                  onClick={() => handleMoveToRegular(user.email)}
                 >
                   Downgrade
                 </button>

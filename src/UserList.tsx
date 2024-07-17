@@ -5,6 +5,7 @@ import {
   deleteUser,
   moveUserToPremium,
 } from "./firestoreService";
+import { FaCrown } from "react-icons/fa6";
 
 interface User {
   email: string;
@@ -51,12 +52,15 @@ const UserList: React.FC = () => {
                   Delete
                 </button>
                 <button
-                  className="bg-green text-blue-dark font-bold px-2"
+                  className="bg-green text-blue-dark font-bold px-2 flex gap-1 items-center hover:bg-blue-dark hover:text-white"
                   onClick={() => moveUserToPremium(user.email)}
                 >
+                  <FaCrown className="text-blue-light size-3" />
                   Premium
                 </button>
-                {user.firstName} {user.lastName} - {user.email}
+                <span className="text-xs md:text-base">
+                  {user.firstName} {user.lastName} - {user.email}
+                </span>
               </div>
             </div>
           ))}

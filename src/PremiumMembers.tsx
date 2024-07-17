@@ -4,6 +4,7 @@ import {
   moveUserToRegular,
 } from "./firestoreService";
 import { FaCrown } from "react-icons/fa6";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 interface User {
   email: string;
@@ -33,24 +34,27 @@ const PremiumMembers: React.FC = () => {
 
   return (
     <>
-      <div className="mx-auto w-[90%] max-w-[1200px] bg-white mt-20 rounded-lg shadow-md p-6">
+      <div className="mx-auto w-[90%] max-w-[1200px] bg-blue-med mt-20 rounded-lg shadow-md p-6">
         <div className="flex gap-1 justify-center">
-          <h2 className="text-center text-2xl font-bold text-blue-light mb-5">
+          <h2 className="text-center text-2xl font-bold text-white mb-5">
             Premium Members
           </h2>
           <FaCrown className="text-blue-light size-5" />
         </div>
-        <div className="border-8 border-blue-dark  w-[75%] mx-auto py-10 px-2">
+        <div className="bg-blue-light mx-auto py-10 px-2 shadow-lg rounded-lg">
           {users.map((user) => (
-            <div key={user.email} className="text-center font-bold mb-2">
-              <div className="flex gap-2">
+            <div key={user.email} className="text-left font-bold mb-2">
+              <div className="flex flex-row  md:items-center gap-2">
                 <button
-                  className="bg-red px-2 hover:bg-red-dark transition duration-150 ease-in-out"
+                  className="shadow-lg flex items-center bg-white px-2 hover:bg-red-dark transition duration-150 ease-in-out hover:text-white"
                   onClick={() => handleMoveToRegular(user.email)}
                 >
+                  <FaAngleDoubleDown className="text-red hover:text-white" />
                   Downgrade
                 </button>
-                {user.firstName} {user.lastName} - {user.email}
+                <span className="text-white text-xs md:text-base font-med">
+                  {user.firstName} {user.lastName} - {user.email}
+                </span>
               </div>
             </div>
           ))}

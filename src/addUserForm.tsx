@@ -9,6 +9,10 @@ const AddUserForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await addUser({ email, firstName, lastName });
+    // clear the input fields after successful submission
+    setEmail("");
+    setFirstName("");
+    setLastName("");
   };
 
   return (

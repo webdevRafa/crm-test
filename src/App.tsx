@@ -4,9 +4,9 @@ import { AuthProvider, useAuth } from "./AuthContext";
 
 import PremiumMembers from "./PremiumMembers";
 import SignIn from "./SignIn";
-import SignOut from "./SignOut";
 import UserList from "./UserList";
 import AddUserForm from "./addUserForm";
+import Header from "./Header";
 
 const AppContent: React.FC = () => {
   const { user } = useAuth();
@@ -15,7 +15,7 @@ const AppContent: React.FC = () => {
     <div>
       {user ? (
         <>
-          <SignOut />
+          <Header />
           <AddUserForm />
           <UserList />
           <PremiumMembers />

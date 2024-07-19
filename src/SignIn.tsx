@@ -50,7 +50,7 @@ const SignIn: React.FC = () => {
               />
             </div>
             <button
-              className="bg-blue-light p-2 shadow-lg mt-5 text-white"
+              className="bg-blue-light p-2 shadow-lg mt-5 text-white  hover:translate-y-[-4px] transition duration-150 ease-in-out"
               type="submit"
             >
               Sign In

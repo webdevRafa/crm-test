@@ -21,7 +21,9 @@ const AppContent: React.FC = () => {
           <PremiumMembers />
         </>
       ) : (
-        <SignIn />
+        <>
+          <SignIn />
+        </>
       )}
     </div>
   );

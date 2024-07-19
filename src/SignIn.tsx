@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 import { useState } from "react";
-
+import logo from "./assets/ngw.svg";
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +20,11 @@ const SignIn: React.FC = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center h-[100vh] w-full">
+      <div className="flex items-center flex-col justify-center h-[100vh] w-full">
+        <div className="flex justify-start flex-col">
+          <img className="h-auto w-[200px]" src={logo} alt="" />
+          <h1 className="text-white mb-5">NextGen WebWorks</h1>
+        </div>
         <div className="bg-blue-med p-20 shadow-xl">
           <h2 className="text-white mb-5">Please sign in for access..</h2>
           {error && <p style={{ color: "red" }}>{error}</p>}
